@@ -1,23 +1,25 @@
-var notas = [];
+var notas = []
 
 function adicionarNota() {
-    var valorElemento = parseFloat(document.getElementById("notas").value);
-    var adicionar = notas.push(valorElemento);
+  var valorElemento = parseFloat(document.getElementById('notas').value)
+  var adicionar = notas.push(valorElemento)
 
-    document.getElementById("notas").value = "";
+  document.getElementById('notas').value = ''
 }
 
 function calculaMedia() {
-    var soma = 0;
-    var media = 0;
-    for (var i = 0; i < notas.length; i++)
-        soma += notas[i];
-    media = soma / notas.length;
-    return media.toFixed(2);
+  let soma = 0
+  let media = 0
+
+  for (let i = 0; i < notas.length; i++) {
+    soma += notas[i]
+  }
+  media = soma / notas.length
+  return media.toFixed(2)
 }
 
 function mostraResultado() {
-    var opcoes = document.getElementById("resultado");
+  var opcoes = document.getElementById('resultado')
 
-    opcoes.innerHTML = `<p> A média de suas notas é: ${calculaMedia()} </p>`;
+  opcoes.innerHTML = `<p> A média de suas notas é: ${calculaMedia()} </p>`
 }
